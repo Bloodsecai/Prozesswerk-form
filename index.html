@@ -149,13 +149,84 @@ textarea::placeholder{color:#A0AEC0;}
 .success-msg p{font-size:0.92rem;color:var(--text-soft);}
 
 /* ── RESPONSIVE ── */
-@media(max-width:600px){
-  .questions-grid{grid-template-columns:1fr;}
+/* ── TABLET ── */
+@media(max-width:768px){
+  .container{max-width:100%;}
+  .hero-title{font-size:1.6rem;}
+  .questions-grid{grid-template-columns:1fr 1fr;}
+  .q-box+.q-box{border-left:1.5px solid var(--border-soft);}
+  .questions-grid .q-box:nth-child(3){border-left:none;border-top:1.5px solid var(--border-soft);grid-column:1/-1;}
+  .questions-grid+.questions-grid .q-box:nth-child(3){border-left:none;}
+  .bottom-grid{grid-template-columns:1fr;}
+}
+
+/* ── MOBILE ── */
+@media(max-width:500px){
+  body{padding:16px 12px 60px;}
+  .container{max-width:100%;}
+
+  /* Top bar */
+  .top-bar{flex-direction:column;align-items:stretch;gap:10px;margin-bottom:18px;}
+  .form-switcher{justify-content:center;width:100%;}
+  .form-btn{flex:1;text-align:center;padding:10px 8px;font-size:0.78rem;}
+  .lang-toggle{justify-content:center;align-self:flex-end;width:fit-content;margin:0 auto;}
+
+  /* Header */
+  .header{padding:28px 16px 24px;}
+  .logo-row{gap:10px;margin-bottom:20px;}
+  .logo-img{width:40px;height:40px;}
+  .brand-name{font-size:1.4rem;}
+  .hero-title{font-size:1.3rem;line-height:1.2;}
+  .hero-sub{font-size:0.88rem;}
+  .goal-box{padding:14px 16px;gap:12px;max-width:100%;margin-bottom:20px;}
+  .goal-icon{font-size:1.5rem;}
+  .goal-text{font-size:0.83rem;}
+
+  /* Trust badges */
+  .trust-row{gap:12px;padding-bottom:20px;}
+  .trust-item{font-size:0.78rem;}
+
+  /* Section */
+  .section-card{padding:24px 0 28px;}
+  .section-num{width:28px;height:28px;font-size:0.82rem;}
+  .section-title{font-size:0.75rem;}
+  .info-banner{font-size:0.8rem;padding:10px 13px;}
+  .hint-banner{font-size:0.8rem;padding:11px 14px;margin-top:14px;}
+
+  /* Questions grid — single column on mobile */
+  .questions-grid{grid-template-columns:1fr;border-radius:10px;}
+  .questions-grid:first-of-type{border-radius:10px 10px 0 0;}
+  .questions-grid+.questions-grid{border-radius:0 0 10px 10px;}
+  .q-box{padding:18px 16px;}
   .q-box+.q-box{border-left:none;border-top:1.5px solid var(--border-soft);}
-  .two-col,.bottom-grid{grid-template-columns:1fr;}
-  .hero-title{font-size:1.5rem;}
-  .top-bar{flex-direction:column;align-items:stretch;}
-  .form-switcher,.lang-toggle{justify-content:center;}
+  .questions-grid+.questions-grid .q-box{border-top:1.5px solid var(--border-soft);}
+  .q-box-title{font-size:0.83rem;}
+  .option-text{font-size:0.82rem;}
+  .q-icon{font-size:1.15rem;}
+
+  /* Textareas */
+  .two-col{grid-template-columns:1fr;gap:16px;}
+  textarea{min-height:90px;font-size:0.87rem;}
+  .field label{font-size:0.85rem;}
+
+  /* Submit */
+  .submit-wrap{padding:20px 0 0;}
+  .submit-btn{padding:15px;font-size:0.92rem;}
+  .submit-sub{font-size:0.78rem;}
+
+  /* Bottom */
+  .bottom-grid{grid-template-columns:1fr;gap:14px;margin-top:20px;}
+  .savings-box{padding:20px 16px;}
+  .savings-stats{flex-direction:column;gap:14px;}
+  .stat{border-right:none;border-bottom:1.5px solid rgba(41,82,179,0.15);padding:0 0 14px 0;}
+  .stat:last-child{border-bottom:none;padding-bottom:0;}
+  .stat-num{font-size:1.3rem;}
+  .stat-desc{font-size:0.75rem;}
+  .next-box{padding:20px 16px;}
+  .next-cta{font-size:0.92rem;}
+  .next-sub{font-size:0.8rem;}
+  .phone-btn{font-size:0.92rem;padding:12px 14px;}
+  .linkedin-row{font-size:0.8rem;}
 }
 </style>
 </head>
@@ -221,26 +292,26 @@ textarea::placeholder{color:#A0AEC0;}
     <div class="q-box">
       <div class="q-box-header"><span class="q-icon">💬</span><div class="q-box-title" id="q1-title">Wie kontaktierst du deine Kunden aktuell?</div></div>
       <div class="options" id="q1-opts">
-        <label class="option"><input type="checkbox" name="q_contact" value="Meist manuell (WhatsApp, E-Mail, Telefon)"/><span class="option-text" id="q1a">Meist manuell (WhatsApp, E-Mail, Telefon)</span></label>
-        <label class="option"><input type="checkbox" name="q_contact" value="Teilweise mit Vorlagen"/><span class="option-text" id="q1b">Teilweise mit Vorlagen</span></label>
-        <label class="option"><input type="checkbox" name="q_contact" value="Strukturiert / automatisiert"/><span class="option-text" id="q1c">Strukturiert / automatisiert</span></label>
+        <label class="option"><input type="checkbox" name="1. Wie kontaktierst du deine Kunden aktuell?" value="Meist manuell (WhatsApp, E-Mail, Telefon)"/><span class="option-text" id="q1a">Meist manuell (WhatsApp, E-Mail, Telefon)</span></label>
+        <label class="option"><input type="checkbox" name="1. Wie kontaktierst du deine Kunden aktuell?" value="Teilweise mit Vorlagen"/><span class="option-text" id="q1b">Teilweise mit Vorlagen</span></label>
+        <label class="option"><input type="checkbox" name="1. Wie kontaktierst du deine Kunden aktuell?" value="Strukturiert / automatisiert"/><span class="option-text" id="q1c">Strukturiert / automatisiert</span></label>
       </div>
     </div>
     <div class="q-box">
       <div class="q-box-header"><span class="q-icon">🔄</span><div class="q-box-title" id="q2-title">Wie gehst du aktuell mit Nachfassaktionen um?</div></div>
       <div class="options">
-        <label class="option"><input type="checkbox" name="q_followup" value="Unregelmäßig"/><span class="option-text" id="q2a">Unregelmäßig</span></label>
-        <label class="option"><input type="checkbox" name="q_followup" value="Wenn ich daran denke / Zeit habe"/><span class="option-text" id="q2b">Wenn ich daran denke / Zeit habe</span></label>
-        <label class="option"><input type="checkbox" name="q_followup" value="Nach einem festen Ablauf"/><span class="option-text" id="q2c">Nach einem festen Ablauf</span></label>
-        <label class="option"><input type="checkbox" name="q_followup" value="Automatisiert"/><span class="option-text" id="q2d">Automatisiert</span></label>
+        <label class="option"><input type="checkbox" name="2. Wie gehst du aktuell mit Nachfassaktionen um?" value="Unregelmäßig"/><span class="option-text" id="q2a">Unregelmäßig</span></label>
+        <label class="option"><input type="checkbox" name="2. Wie gehst du aktuell mit Nachfassaktionen um?" value="Wenn ich daran denke / Zeit habe"/><span class="option-text" id="q2b">Wenn ich daran denke / Zeit habe</span></label>
+        <label class="option"><input type="checkbox" name="2. Wie gehst du aktuell mit Nachfassaktionen um?" value="Nach einem festen Ablauf"/><span class="option-text" id="q2c">Nach einem festen Ablauf</span></label>
+        <label class="option"><input type="checkbox" name="2. Wie gehst du aktuell mit Nachfassaktionen um?" value="Automatisiert"/><span class="option-text" id="q2d">Automatisiert</span></label>
       </div>
     </div>
     <div class="q-box">
       <div class="q-box-header"><span class="q-icon">👤</span><div class="q-box-title" id="q3-title">Wo speicherst du deine Kundendaten?</div></div>
       <div class="options">
-        <label class="option"><input type="checkbox" name="q_data" value="In verschiedenen Tools / Excel"/><span class="option-text" id="q3a">In verschiedenen Tools / Excel</span></label>
-        <label class="option"><input type="checkbox" name="q_data" value="In einem CRM, aber unvollständig"/><span class="option-text" id="q3b">In einem CRM, aber unvollständig</span></label>
-        <label class="option"><input type="checkbox" name="q_data" value="Zentral und immer aktuell"/><span class="option-text" id="q3c">Zentral und immer aktuell</span></label>
+        <label class="option"><input type="checkbox" name="3. Wo speicherst du deine Kundendaten?" value="In verschiedenen Tools / Excel"/><span class="option-text" id="q3a">In verschiedenen Tools / Excel</span></label>
+        <label class="option"><input type="checkbox" name="3. Wo speicherst du deine Kundendaten?" value="In einem CRM, aber unvollständig"/><span class="option-text" id="q3b">In einem CRM, aber unvollständig</span></label>
+        <label class="option"><input type="checkbox" name="3. Wo speicherst du deine Kundendaten?" value="Zentral und immer aktuell"/><span class="option-text" id="q3c">Zentral und immer aktuell</span></label>
       </div>
     </div>
   </div>
@@ -249,29 +320,29 @@ textarea::placeholder{color:#A0AEC0;}
     <div class="q-box">
       <div class="q-box-header"><span class="q-icon">📄</span><div class="q-box-title" id="q4-title">Wie erstellst du aktuell Dokumente wie PDFs oder Angebote?</div></div>
       <div class="options">
-        <label class="option"><input type="checkbox" name="q_docs" value="Komplett manuell"/><span class="option-text" id="q4a">Komplett manuell</span></label>
-        <label class="option"><input type="checkbox" name="q_docs" value="Mit Vorlagen"/><span class="option-text" id="q4b">Mit Vorlagen</span></label>
-        <label class="option"><input type="checkbox" name="q_docs" value="Teilweise automatisiert"/><span class="option-text" id="q4c">Teilweise automatisiert</span></label>
-        <label class="option"><input type="checkbox" name="q_docs" value="Automatisiert"/><span class="option-text" id="q4d">Automatisiert</span></label>
+        <label class="option"><input type="checkbox" name="4. Wie erstellst du Dokumente / PDFs oder Angebote?" value="Komplett manuell"/><span class="option-text" id="q4a">Komplett manuell</span></label>
+        <label class="option"><input type="checkbox" name="4. Wie erstellst du Dokumente / PDFs oder Angebote?" value="Mit Vorlagen"/><span class="option-text" id="q4b">Mit Vorlagen</span></label>
+        <label class="option"><input type="checkbox" name="4. Wie erstellst du Dokumente / PDFs oder Angebote?" value="Teilweise automatisiert"/><span class="option-text" id="q4c">Teilweise automatisiert</span></label>
+        <label class="option"><input type="checkbox" name="4. Wie erstellst du Dokumente / PDFs oder Angebote?" value="Automatisiert"/><span class="option-text" id="q4d">Automatisiert</span></label>
       </div>
     </div>
     <div class="q-box">
       <div class="q-box-header"><span class="q-icon">📋</span><div class="q-box-title" id="q5-title">Wie behältst du Aufgaben und Prozesse im Blick?</div></div>
       <div class="options">
-        <label class="option"><input type="checkbox" name="q_tasks" value="Im Kopf / Notizen"/><span class="option-text" id="q5a">Im Kopf / Notizen</span></label>
-        <label class="option"><input type="checkbox" name="q_tasks" value="Excel / To-Do-Listen"/><span class="option-text" id="q5b">Excel / To-Do-Listen</span></label>
-        <label class="option"><input type="checkbox" name="q_tasks" value="CRM / Tool"/><span class="option-text" id="q5c">CRM / Tool</span></label>
-        <label class="option"><input type="checkbox" name="q_tasks" value="Automatische Erinnerungen"/><span class="option-text" id="q5d">Automatische Erinnerungen</span></label>
+        <label class="option"><input type="checkbox" name="5. Wie behältst du Aufgaben und Prozesse im Blick?" value="Im Kopf / Notizen"/><span class="option-text" id="q5a">Im Kopf / Notizen</span></label>
+        <label class="option"><input type="checkbox" name="5. Wie behältst du Aufgaben und Prozesse im Blick?" value="Excel / To-Do-Listen"/><span class="option-text" id="q5b">Excel / To-Do-Listen</span></label>
+        <label class="option"><input type="checkbox" name="5. Wie behältst du Aufgaben und Prozesse im Blick?" value="CRM / Tool"/><span class="option-text" id="q5c">CRM / Tool</span></label>
+        <label class="option"><input type="checkbox" name="5. Wie behältst du Aufgaben und Prozesse im Blick?" value="Automatische Erinnerungen"/><span class="option-text" id="q5d">Automatische Erinnerungen</span></label>
       </div>
     </div>
     <div class="q-box">
       <div class="q-box-header"><span class="q-icon">⭐</span><div class="q-box-title" id="q6-title">Wie zufrieden bist du aktuell mit deinen Prozessen?</div></div>
       <div class="options">
-        <label class="option"><input type="radio" name="q_satisfaction" value="1"/><span class="option-text" id="q6a">1 – Sehr unzufrieden</span></label>
-        <label class="option"><input type="radio" name="q_satisfaction" value="2"/><span class="option-text" id="q6b">2</span></label>
-        <label class="option"><input type="radio" name="q_satisfaction" value="3"/><span class="option-text" id="q6c">3</span></label>
-        <label class="option"><input type="radio" name="q_satisfaction" value="4"/><span class="option-text" id="q6d">4</span></label>
-        <label class="option"><input type="radio" name="q_satisfaction" value="5"/><span class="option-text" id="q6e">5 – Sehr zufrieden</span></label>
+        <label class="option"><input type="radio" name="6. Wie zufrieden bist du mit deinen Prozessen? (1-5)" value="1"/><span class="option-text" id="q6a">1 – Sehr unzufrieden</span></label>
+        <label class="option"><input type="radio" name="6. Wie zufrieden bist du mit deinen Prozessen? (1-5)" value="2"/><span class="option-text" id="q6b">2</span></label>
+        <label class="option"><input type="radio" name="6. Wie zufrieden bist du mit deinen Prozessen? (1-5)" value="3"/><span class="option-text" id="q6c">3</span></label>
+        <label class="option"><input type="radio" name="6. Wie zufrieden bist du mit deinen Prozessen? (1-5)" value="4"/><span class="option-text" id="q6d">4</span></label>
+        <label class="option"><input type="radio" name="6. Wie zufrieden bist du mit deinen Prozessen? (1-5)" value="5"/><span class="option-text" id="q6e">5 – Sehr zufrieden</span></label>
       </div>
     </div>
   </div>
@@ -295,11 +366,11 @@ textarea::placeholder{color:#A0AEC0;}
   <div class="two-col">
     <div class="field">
       <label id="q7-label">Was kostet dich aktuell am meisten Zeit im Alltag?</label>
-      <textarea name="biggest_time" id="q7-ta" placeholder="Deine Antwort..."></textarea>
+      <textarea name="Was kostet dich am meisten Zeit im Alltag?" id="q7-ta" placeholder="Deine Antwort..."></textarea>
     </div>
     <div class="field">
       <label id="q8-label">Wo verlierst du aktuell am meisten Potenzial?</label>
-      <textarea name="biggest_potential" id="q8-ta" placeholder="Deine Antwort..."></textarea>
+      <textarea name="Wo verlierst du aktuell am meisten Potenzial?" id="q8-ta" placeholder="Deine Antwort..."></textarea>
     </div>
   </div>
 </div>
@@ -313,11 +384,11 @@ textarea::placeholder{color:#A0AEC0;}
   <div class="two-col">
     <div class="field">
       <label id="q9-label">Was möchtest du in den nächsten 3–6 Monaten konkret verändern?</label>
-      <textarea name="goal_improve" id="q9-ta" placeholder="Deine Antwort..."></textarea>
+      <textarea name="Was moechtest du in den naechsten 3-6 Monaten konkret veraendern?" id="q9-ta" placeholder="Deine Antwort..."></textarea>
     </div>
     <div class="field">
       <label id="q10-label">Wie würde dein idealer Arbeitstag aussehen?</label>
-      <textarea name="goal_workday" id="q10-ta" placeholder="Deine Antwort..."></textarea>
+      <textarea name="Wie wuerde dein idealer Arbeitstag aussehen?" id="q10-ta" placeholder="Deine Antwort..."></textarea>
     </div>
   </div>
 </div>
